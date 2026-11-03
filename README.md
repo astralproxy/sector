@@ -3,6 +3,8 @@ How to Play
 
 Welcome to SECTOR! Launch relentless volleys of kinetic orbs, destroy wandering anomalies, collect Chronal Dust, and upgrade your ship to survive deeper sectors.
 
+https://astralproxy.github.io/sector/
+
 🎮 Controls
 
 📱 Mobile Controls (Touch & Swipe)
