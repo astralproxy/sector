@@ -304,6 +304,10 @@
         let metaState = {
             chronalDust: 0,
             lastSaveTime: Date.now(),
+            // Add run progression tracking to metaState defaults
+            currentLevel: 1,
+            currentXP: 0,
+            xpToNextLevel: 1000,
             upgrades: {
                 baseFireRate: 0,
                 baseDamage: 0,
@@ -336,6 +340,12 @@
                 if (saved) {
                     const parsed = JSON.parse(saved);
                     metaState = { ...metaState, ...parsed };
+
+                    // Restore saved Sector & XP values into current run state
+                    if (parsed.currentLevel) runState.level = parsed.currentLevel;
+                    if (parsed.currentXP !== undefined) runState.xp = parsed.currentXP;
+                    if (parsed.xpToNextLevel) runState.xpToNextLevel = parsed.xpToNextLevel;
+                  
                     if (parsed.upgrades) {
                         metaState.upgrades = { ...metaState.upgrades, ...parsed.upgrades };
                     }
@@ -1007,6 +1017,12 @@
                 updatePlayerRadius();
                 triggerLevelUpModal();
             }
+
+            // Update persistent state & save immediately
+            metaState.currentLevel = runState.level;
+            metaState.currentXP = runState.xp;
+            metaState.xpToNextLevel = runState.xpToNextLevel;
+            saveData();
         }
 
         // ==========================================
