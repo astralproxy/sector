@@ -1306,14 +1306,6 @@
             }
         }
 
-        const btnAutopilot = document.getElementById('btn-autopilot');
-        btnAutopilot.addEventListener('click', () => {
-            autoPilot = !autoPilot;
-            document.getElementById('autopilot-text').innerText = autoPilot ? 'AUTO-TRACK: ON' : 'AUTO-TRACK: OFF';
-            document.getElementById('autopilot-icon').className = autoPilot ? 'fa-solid fa-robot text-xs' : 'fa-solid fa-hand text-xs';
-            btnAutopilot.classList.toggle('glow-cyan', autoPilot);
-        });
-
         let currentDraftChoices = [];
 
         function renderLevelUpDraft() {
