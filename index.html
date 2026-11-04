@@ -112,10 +112,6 @@
                 </span>
                 <span id="active-orbs-count" class="text-sm font-bold font-mono text-cyan-300">0</span>
             </button>
-            <button id="btn-autopilot" class="glass-panel px-3 py-1.5 rounded-xl flex items-center gap-1.5 text-xs font-orbitron font-bold text-cyan-300 border border-cyan-500/40 hover:bg-cyan-500/20 transition glow-cyan">
-                <i id="autopilot-icon" class="fa-solid fa-robot text-xs"></i>
-                <span id="autopilot-text">AUTO-TRACK: ON</span>
-            </button>
 
             <!-- Collapsible Player Stats Panel -->
             <div id="stats-panel" class="absolute top-full left-0 right-0 mt-2 glass-panel p-3 rounded-2xl border border-cyan-500/30 shadow-2xl hidden z-30 transition-all">
@@ -418,7 +414,7 @@
         let lastTime = performance.now();
         let totalTimePlayed = 0;
         let isPaused = false;
-        let autoPilot = true;
+        let autoPilot = false;
 
         const metaUpgradesCatalog = [
             { id: 'baseFireRate', name: 'Rapid Launcher', desc: 'Increases baseline launch firing rate', baseCost: 15, costMult: 1.8, maxLevel: 10, icon: 'fa-gauge-high' },
